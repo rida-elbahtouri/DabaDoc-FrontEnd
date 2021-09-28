@@ -44,3 +44,17 @@ export const getAnswers = (token, question_id) => {
     },
   });
 };
+
+export const CreateQuestion = (token, question) => {
+  return Axios.post(
+    `${baseUrl}/questions/`,
+    {
+      question,
+    },
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  );
+};

@@ -11,7 +11,6 @@ const Index = () => {
     const token = localStorage.getItem("token");
     navigator.geolocation.getCurrentPosition(
       (position) => {
-        console.log([position.coords.latitude, position.coords.longitude]);
         getQuestions(token, [
           position.coords.latitude,
           position.coords.longitude,

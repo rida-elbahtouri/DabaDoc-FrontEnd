@@ -1,11 +1,16 @@
 import { BrowserRouter as Router } from "react-router-dom";
+import Nav from "./Nav";
+
 import SwitchLinks from "./SwitchLinks";
 
 const App = () => {
   return (
-    <div className="container mt-3">
+    <div>
       <Router>
-        <SwitchLinks />
+        <Nav />
+        <div className="container mt-3">
+          <SwitchLinks />
+        </div>
       </Router>
     </div>
   );
