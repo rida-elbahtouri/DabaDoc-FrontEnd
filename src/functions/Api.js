@@ -73,14 +73,20 @@ export const AddAnswer = (token, answer) => {
   );
 };
 
-// export const getUserData = (token) => {
-//   return Axios.get(`${baseUrl}/activeUser/`, {
-//     headers: {
-//       Authorization: `Bearer ${token}`,
-//     },
-//   });
-// };
-
+export const getUserData = (token) => {
+  return Axios.get(`${baseUrl}/activeUser/`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+};
+export const getFavoriteQuestions = (token) => {
+  return Axios.get(`${baseUrl}/favorites/`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+};
 export const AddToFav = (token, question_id) => {
   return Axios.post(
     `${baseUrl}/favorites/`,

@@ -3,12 +3,14 @@ import AuthSwitch from "./auth/AuthSwitch";
 import Question from "./Questios/index";
 import Answers from "./Answers";
 import CreateQuestion from "./Questios/Create";
+import Profile from "./Profile/profile";
 const SwitchLinks = () => {
   return (
     <Switch>
       <Route path="/" exact component={Question} />
       <Route path="/question/add" exact component={CreateQuestion} />
       <Route path="/question/:id/answers" exact component={Answers} />
+      <Route path="/profile" exact component={Profile} />
       <Route path="/login" exact component={AuthSwitch} />
       <Route path="/signup" exact component={AuthSwitch} />
     </Switch>
