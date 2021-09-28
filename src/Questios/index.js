@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Alert } from "react-bootstrap";
-
+import { Link } from "react-router-dom";
 import { getQuestions } from "../functions/Api";
 import Card from "./card";
 
@@ -48,7 +48,11 @@ const Index = () => {
   const renderHelper = (questions) => {
     if (questions) {
       const res = questions.map((ques) => {
-        return <Card question={ques} key={ques.id} />;
+        return (
+          <Link to={`/question/${ques.id}/answers`}>
+            <Card question={ques} key={ques.id} />
+          </Link>
+        );
       });
       return res;
     } else {

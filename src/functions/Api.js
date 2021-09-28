@@ -38,7 +38,7 @@ export const getQuestions = (token, coord = null) => {
 };
 
 export const getAnswers = (token, question_id) => {
-  return Axios.get(`${baseUrl}/answers/${question_id}`, {
+  return Axios.get(`${baseUrl}/questions/${question_id}/`, {
     headers: {
       Authorization: `Bearer ${token}`,
     },
