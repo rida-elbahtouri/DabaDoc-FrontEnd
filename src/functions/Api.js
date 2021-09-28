@@ -24,3 +24,23 @@ export const checkToken = (token) => {
     },
   });
 };
+
+export const getQuestions = (token, coord = null) => {
+  return Axios.get(`${baseUrl}/questions/`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+    params: {
+      lat: coord ? coord[0] : null,
+      long: coord ? coord[1] : null,
+    },
+  });
+};
+
+export const getAnswers = (token, question_id) => {
+  return Axios.get(`${baseUrl}/answers/${question_id}`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+};

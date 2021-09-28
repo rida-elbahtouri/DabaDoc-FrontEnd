@@ -3,7 +3,7 @@ import SwitchLinks from "./SwitchLinks";
 
 const App = () => {
   return (
-    <div>
+    <div className="container mt-3">
       <Router>
         <SwitchLinks />
       </Router>
