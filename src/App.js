@@ -1,17 +1,30 @@
-import { BrowserRouter as Router } from "react-router-dom";
 import Nav from "./Nav";
-
 import SwitchLinks from "./SwitchLinks";
+import { checkToken } from "./functions/Api";
+import { useEffect } from "react";
+import { useLocation, useHistory } from "react-router-dom";
 
 const App = () => {
+  const location = useLocation();
+  const history = useHistory();
+  useEffect(() => {
+    if (location.pathname !== "/login") {
+      if (localStorage.getItem("token")) {
+        checkToken(localStorage.getItem("token")).catch(() => {
+          localStorage.removeItem("token");
+          history.push("/login");
+        });
+      } else {
+        history.push("/login");
+      }
+    }
+  }, [location.pathname]);
   return (
     <div>
-      <Router>
-        <Nav />
-        <div className="container mt-3">
-          <SwitchLinks />
-        </div>
-      </Router>
+      <Nav />
+      <div className="container mt-3">
+        <SwitchLinks />
+      </div>
     </div>
   );
 };
