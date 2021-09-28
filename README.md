@@ -1,70 +1,92 @@
-# Getting Started with Create React App
+# DabaDOC-QA
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a React webapp that connected to a [back-end](https://github.com/rida-elbahtouri/DabaDoc-Test) rails app.
+the App allow user to Login and sign up with his email and password ,
+explore questions ordered by distance,answer question, and finaly ad question to favorites list.
 
-## Available Scripts
+### Future features
 
-In the project directory, you can run:
+- Allow user too question on google map
 
-### `yarn start`
+### ScreenShot
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+![screenshot](./src/assets/images/Capture1.png)
+![screenshot](./src/assets/images/Capture2.png)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Built With
 
-### `yarn test`
+- React
+- JSX
+- CSS
+- JavaScript
+- VS Code
+- NPM
+- Axios
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Prerequisites
 
-### `yarn build`
+You must have a browser on your PC in order to use the application. [Click here](https://www.mozilla.org/en-US/firefox/new/) to download one.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+you must have [NodeJS](https://nodejs.org/en/)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Getting Started
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. clone the project
 
-### `yarn eject`
+```bash
+# Clone this repository
+$ git https://github.com/rida-elbahtouri/DabaDoc-FrontEnd.git
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+# Go into the repository
+$ cd DabaDoc-FrontEnd
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+**You can Install the dependencies with this commands**
 
-## Learn More
+```bash
+$ npm install
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### start the app
 
-### Code Splitting
+```bash
+$ npm  start
+ # and open the link provided
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Usage
 
-### Analyzing the Bundle Size
+##### Signup with an Email and Password
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+##### Click on Add Question to Create Question ,and Allow Location Access
 
-### Making a Progressive Web App
+##### Click on any question,and clikco n My favorite to ad it to your favorite list
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+##### Clikcon your profile to find a list of your favorites Questions
 
-### Advanced Configuration
+##### Click on Any Question on Home page to see the answes
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+##### write yor answers and click create to add your answer
 
-### Deployment
+##### Click on logout ,to logout
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Authors
 
-### `yarn build` fails to minify
+👤 **Rida Elbahtouri**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [Github](https://github.com/rida-elbahtouri)
+- [Twitter](https://twitter.com/RElbahtouri)
+- [Linkedin](https://www.linkedin.com/in/rida-elbahtouri/)
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!
+
+Feel free to check the <a href="https://github.com/rida-elbahtouri/DabaDoc-FrontEnd/issues" target="_blank">issues page</a>.
+
+## Show your support
+
+Give a ⭐️ if you like this project!
