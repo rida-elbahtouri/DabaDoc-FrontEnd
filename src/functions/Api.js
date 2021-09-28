@@ -58,3 +58,17 @@ export const CreateQuestion = (token, question) => {
     }
   );
 };
+
+export const AddAnswer = (token, answer) => {
+  return Axios.post(
+    `${baseUrl}/answers/`,
+    {
+      answer,
+    },
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  );
+};

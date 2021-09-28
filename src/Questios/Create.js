@@ -74,6 +74,7 @@ const Create = () => {
       <Form.Group className="mb-3">
         <Form.Label>Title</Form.Label>
         <Form.Control
+          required
           onChange={(e) => {
             setTitle(e.target.value);
           }}
@@ -84,6 +85,7 @@ const Create = () => {
       <Form.Group className="mb-3">
         <Form.Label>Content</Form.Label>
         <Form.Control
+          required
           onChange={(e) => {
             setContent(e.target.value);
           }}

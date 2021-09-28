@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import { getAnswers } from "../functions/Api";
 import QuestionCard from "../Questios/card";
+
+import CreateAnswer from "./Create";
+
 const Index = (props) => {
   const [question, setQuestion] = useState(null);
 
@@ -18,8 +21,14 @@ const Index = (props) => {
       });
   }, []);
 
+  const AddAnswerToList = (answer) => {
+    question.answers.unshift(answer);
+    setQuestion(null);
+    setQuestion(question);
+  };
+
   const renderAnswers = (answers) => {
-    if (answers.length > 0) {
+    if (answers && answers.length > 0) {
       const res = answers.map((answer) => {
         return (
           <p
@@ -38,7 +47,13 @@ const Index = (props) => {
       return (
         <div>
           <QuestionCard question={question} />
-          <div>{renderAnswers(question.answers)}</div>
+          <div className="border rounded bg-light">
+            <CreateAnswer
+              AddAnswerToList={AddAnswerToList}
+              question_id={question.id}
+            />
+            <div>{renderAnswers(question.answers)}</div>
+          </div>
         </div>
       );
     }
