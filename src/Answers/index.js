@@ -54,7 +54,7 @@ const Index = (props) => {
           setFav(!fav);
         })
         .catch((e) => {
-          console.log(e.request);
+          console.log(e);
         });
     } else {
       AddToFav(token, id)
