@@ -4,7 +4,7 @@ const QuestionCard = ({ question }) => {
   const renderDist = (dist) => {
     if (dist || dist == 0) {
       return (
-        <Card.Text className="text-decoration-none">
+        <Card.Text className="text-decoration-none text-primary">
           {dist.toFixed(2)} Km
         </Card.Text>
       );

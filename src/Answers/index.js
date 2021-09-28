@@ -1,20 +1,21 @@
 import { useEffect, useState } from "react";
-import { getAnswers } from "../functions/Api";
+import { getAnswers, AddToFav, removeFromFav } from "../functions/Api";
 import QuestionCard from "../Questios/card";
 
 import CreateAnswer from "./Create";
 
 const Index = (props) => {
   const [question, setQuestion] = useState(null);
-
+  const [fav, setFav] = useState(false);
   useEffect(() => {
     const token = localStorage.getItem("token");
-    console.log(props);
     const id = props.match.params.id;
+
     getAnswers(token, id)
       .then((res) => {
         console.log(res.data);
-        setQuestion(res.data);
+        setQuestion(res.data.question);
+        setFav(res.data.fav);
       })
       .catch((e) => {
         console.log(e.response);
@@ -42,11 +43,62 @@ const Index = (props) => {
       return res;
     }
   };
+
+  const AddRemoveFromFav = () => {
+    const token = localStorage.getItem("token");
+    const id = props.match.params.id;
+    if (fav) {
+      removeFromFav(token, id)
+        .then((res) => {
+          console.log(res);
+          setFav(!fav);
+        })
+        .catch((e) => {
+          console.log(e.request);
+        });
+    } else {
+      AddToFav(token, id)
+        .then((res) => {
+          console.log(res);
+          setFav(!fav);
+        })
+        .catch((e) => {
+          console.log(e.response.data);
+        });
+    }
+  };
+
+  const renderifFav = (fav) => {
+    if (fav) {
+      return (
+        <h3
+          role="button"
+          onClick={AddRemoveFromFav}
+          className="text-success text-end pe-2"
+        >
+          My Favorite
+        </h3>
+      );
+    } else {
+      return (
+        <h3
+          role="button"
+          onClick={AddRemoveFromFav}
+          className="text-dark text-end pe-2"
+        >
+          My Favorite
+        </h3>
+      );
+    }
+  };
   const renderHelper = (question) => {
     if (question) {
       return (
         <div>
-          <QuestionCard question={question} />
+          <div>
+            {renderifFav(fav)}
+            <QuestionCard question={question} />
+          </div>
           <div className="border rounded bg-light">
             <CreateAnswer
               AddAnswerToList={AddAnswerToList}
