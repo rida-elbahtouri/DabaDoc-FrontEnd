@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Alert, Form, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 class FormComponent extends Component {
   constructor(props) {
@@ -84,9 +85,9 @@ class FormComponent extends Component {
 
   render() {
     return (
-      <div className="login-page">
+      <div className="login-page bg-light p-5">
         <Form
-          className="bg-light rounded p-4 pb-5 text-center mx-auto"
+          className="rounded p-4 pb-5 text-center mx-auto"
           onSubmit={this.handleForm}
         >
           <h1 className="fw-light pb-5">{this.props.actionTitle}</h1>
@@ -116,6 +117,17 @@ class FormComponent extends Component {
             {this.props.actionTitle}
           </Button>
         </Form>
+
+        <h4 className="text-center">
+          Or{" "}
+          <Link
+            to={this.props.actionLink}
+            className="text-capitalize text-primary"
+          >
+            {" "}
+            {this.props.actionLink}{" "}
+          </Link>
+        </h4>
       </div>
     );
   }

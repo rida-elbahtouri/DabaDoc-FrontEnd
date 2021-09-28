@@ -8,7 +8,7 @@ const App = () => {
   const location = useLocation();
   const history = useHistory();
   useEffect(() => {
-    if (location.pathname !== "/login") {
+    if (location.pathname !== "/login" && location.pathname !== "/signup") {
       if (localStorage.getItem("token")) {
         checkToken(localStorage.getItem("token")).catch(() => {
           localStorage.removeItem("token");

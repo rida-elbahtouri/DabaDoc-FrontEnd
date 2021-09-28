@@ -21,6 +21,7 @@ const AuthSwitch = (props) => {
         <Form
           history={props.history}
           actionTitle="Sign in"
+          actionLink="signup"
           formAction={login}
         />
       );
@@ -29,6 +30,7 @@ const AuthSwitch = (props) => {
         <Form
           history={props.history}
           actionTitle="Sign up"
+          actionLink="login"
           formAction={signUp}
         />
       );
